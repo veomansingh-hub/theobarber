@@ -123,3 +123,64 @@ document.addEventListener("DOMContentLoaded", () => {
     revealObserver.observe(el);
   });
 });
+
+/**
+ * Advanced Marquee Scroll Lighting & Parallax
+ */
+document.addEventListener("DOMContentLoaded", () => {
+  const marqueeSection = document.querySelector('.marquee-pricing-section');
+  const marqueeContainer = document.querySelector('.marquee-rows-container');
+  const marqueeRows = document.querySelectorAll('.marquee-row');
+  
+  if (!marqueeSection || !marqueeRows.length) return;
+
+  function updateMarqueeScroll() {
+    const secRect = marqueeSection.getBoundingClientRect();
+    const viewportHeight = window.innerHeight;
+    const viewportCenter = viewportHeight / 2;
+    
+    // 1. Parallax Translation
+    // The section is 160vh, so scrollable amount is 60vh.
+    const totalScroll = secRect.height - viewportHeight;
+    let progress = -secRect.top / totalScroll;
+    progress = Math.max(0, Math.min(1, progress));
+    
+    // Translate the container up by 40vh over the course of the section scroll
+    if (marqueeContainer) {
+      marqueeContainer.style.transform = `translateY(-${progress * 40}vh)`;
+    }
+    
+    // 2. Lighting Effect
+    marqueeRows.forEach(row => {
+      const rect = row.getBoundingClientRect();
+      const rowCenter = rect.top + rect.height / 2;
+      const distance = Math.abs(viewportCenter - rowCenter);
+      
+      const maxDistance = viewportHeight * 0.4; // Fade completely out at 40% from center
+      let ratio = distance / maxDistance;
+      ratio = Math.max(0, Math.min(1, ratio));
+      
+      let opacity, brightness;
+      // Maximum readability zone: middle 30% of screen (distance ratio < 0.3)
+      if (ratio < 0.3) {
+        opacity = 1;
+        brightness = 1;
+      } else {
+        const fadeProgress = (ratio - 0.3) / 0.7; // 0 to 1
+        opacity = 1 - (fadeProgress * 0.85); // 1 down to 0.15
+        brightness = 1 - fadeProgress;
+      }
+      
+      row.style.opacity = opacity;
+      row.style.color = '#F4F1E8';
+      
+      // VERY subtle soft highlight, no excessive neon glow
+      const shadowOpacity = brightness * 0.15;
+      row.style.textShadow = `0 0 12px rgba(244, 241, 232, ${shadowOpacity})`;
+    });
+    
+    requestAnimationFrame(updateMarqueeScroll);
+  }
+  
+  requestAnimationFrame(updateMarqueeScroll);
+});

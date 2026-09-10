@@ -1620,3 +1620,74 @@ span.separator.scroll-reveal.in-view {
   opacity: 1;
   color: var(--indian-yellow);
 }
+
+/*-----------------------------------*\
+  # PREMIUM SCROLLING MARQUEE
+\*-----------------------------------*/
+
+.marquee-row {
+  display: flex;
+  white-space: nowrap;
+  width: 100vw;
+  opacity: 0.15; /* Base dark state */
+  will-change: opacity, color;
+}
+
+.marquee-inner {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+
+.marquee-content {
+  display: flex;
+  align-items: center;
+}
+
+.marquee-left .marquee-inner {
+  animation: marqueeLeft var(--duration) linear infinite;
+}
+
+.marquee-right .marquee-inner {
+  animation: marqueeRight var(--duration) linear infinite;
+}
+
+@keyframes marqueeLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marqueeRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.marquee-text {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(27px, 6vw, 88px);
+  color: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.marquee-price {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(27px, 6vw, 88px);
+  margin-left: 8px;
+  opacity: 0.9;
+}
+
+.marquee-separator {
+  font-family: 'Rubik', sans-serif;
+  font-size: clamp(27px, 6vw, 88px);
+  margin: 0 4vw;
+  font-weight: 300;
+  opacity: 0.3;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-left .marquee-inner,
+  .marquee-right .marquee-inner {
+    animation-duration: 120s; /* Extremely slow instead of completely stopped */
+  }
+}
