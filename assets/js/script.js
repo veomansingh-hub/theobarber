@@ -95,3 +95,31 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
+
+/**
+ * Scroll Reveal Animation
+ */
+document.addEventListener("DOMContentLoaded", () => {
+  const revealElements = document.querySelectorAll('.scroll-reveal');
+  
+  const revealOptions = {
+    root: null,
+    rootMargin: '-15% 0px -15% 0px', /* Trigger when element is well within viewport */
+    threshold: 0.1
+  };
+  
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+      } else {
+        // Remove class when scrolling out to trigger 'disappear' effect again
+        entry.target.classList.remove('in-view');
+      }
+    });
+  }, revealOptions);
+  
+  revealElements.forEach(el => {
+    revealObserver.observe(el);
+  });
+});
