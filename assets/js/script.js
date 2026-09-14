@@ -184,3 +184,9 @@ document.addEventListener("DOMContentLoaded", () => {
   
   requestAnimationFrame(updateMarqueeScroll);
 });
+
+
+function toggleTmMenu() {
+  document.getElementById('tmMenuOverlay').classList.toggle('active');
+  document.getElementById('tmMenuSheet').classList.toggle('active');
+}

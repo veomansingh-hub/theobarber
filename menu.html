@@ -126,6 +126,9 @@
       transform: translateY(-2px);
     }
   </style>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
 
@@ -158,9 +161,42 @@
     </div>
   </main>
 
-  <a href="https://www.theomedia.co.uk/contact" target="_blank" rel="noopener noreferrer" class="theomedia-fixed-btn" aria-label="Contact TheoMedia">
-    CONTACT THEOMEDIA ↗
-  </a>
+  
+
+  <script src="./assets/js/script.js"></script>
+
+  <!-- NEW THEOMEDIA STUDIO BRANDING -->
+  <div class="tm-studio-trigger" onclick="toggleTmMenu()" aria-label="About the website creator">
+    <img src="./assets/images/theomedia-logo.jpg" alt="TheoMedia" class="tm-trigger-logo">
+    <span class="tm-trigger-text">Site by TheoMedia</span>
+  </div>
+
+  <div class="tm-studio-overlay" id="tmMenuOverlay" onclick="toggleTmMenu()"></div>
+  
+  <div class="tm-studio-sheet" id="tmMenuSheet">
+    <div class="tm-sheet-header">
+      <img src="./assets/images/theomedia-logo.jpg" alt="TheoMedia" class="tm-sheet-logo">
+      <div class="tm-sheet-title-box">
+        <h4 class="tm-sheet-title">TheoMedia Studio</h4>
+        <p class="tm-sheet-subtitle">Premium Digital Experiences</p>
+      </div>
+      <button class="tm-sheet-close" onclick="toggleTmMenu()"><ion-icon name="close-outline"></ion-icon></button>
+    </div>
+    <div class="tm-sheet-actions">
+      <a href="https://www.theomedia.co.uk" target="_blank" class="tm-action-btn">
+        <ion-icon name="globe-outline"></ion-icon>
+        <span>Visit Studio Website</span>
+      </a>
+      <a href="https://wa.me/353852258004" target="_blank" class="tm-action-btn">
+        <ion-icon name="logo-whatsapp"></ion-icon>
+        <span>WhatsApp Message</span>
+      </a>
+      <a href="tel:+353852258004" class="tm-action-btn">
+        <ion-icon name="call-outline"></ion-icon>
+        <span>+353 85 225 8004</span>
+      </a>
+    </div>
+  </div>
 
 </body>
 </html>
