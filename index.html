@@ -32,10 +32,7 @@
     <div class="curtain-panel left"></div>
     <div class="curtain-panel right"></div>
     <div class="curtain-content">
-      <span class="made-by">WEBSITE BY</span>
-      <a href="https://www.theomedia.co.uk/" target="_blank" rel="noopener noreferrer" class="theomedia-link" style="display:flex; flex-direction:column; align-items:center; gap:20px;">
-        <img src="./assets/images/theomedia-logo.jpg" alt="TheoMedia Logo" style="width: 120px; height: 120px; border-radius: 50%; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-      </a>
+      <a href="https://theomedia.co.uk" target="_blank" rel="noopener noreferrer" class="tm-opening-text">theomedia.co.uk</a>
     </div>
   </div>
 
@@ -344,7 +341,7 @@
               <p class="section-text">
                 Book an appointment at our Covent Garden barbershop.
               </p>
-              <form action="https://www.theomedia.co.uk/contact" target="_blank" method="GET" class="appoin-form">
+              <form action="#" target="_blank" method="GET" class="appoin-form">
                 <div class="input-wrapper">
                   <input type="text" name="name" placeholder="FULL NAME" required class="input-field">
                   <input type="email" name="email" placeholder="EMAIL" required class="input-field">
@@ -409,7 +406,7 @@
               <li>SUNDAY <span style="margin-left:20px; color:var(--platinum);">10:00 — 16:00</span></li>
             </ul>
           </div>
-          <a href="https://www.theomedia.co.uk/contact" target="_blank" rel="noopener noreferrer" class="btn has-before" style="margin: 0 auto; display:inline-flex;">
+          <a href="tel:+442071234567" class="btn has-before" style="margin: 0 auto; display:inline-flex;">
             <span class="span">CONTACT ↗</span>
           </a>
         </div>
@@ -418,7 +415,7 @@
     </article>
   </main>
 
-  <footer class="footer" style="background-color: var(--rich-black-fogra-39); padding-top: 80px; padding-bottom: 80px; border-top: 1px solid rgba(255,255,255,0.05);">
+  <footer class="footer" style="background-color: var(--rich-black-fogra-39); padding-top: 80px; padding-bottom: 120px; border-top: 1px solid rgba(255,255,255,0.05);">
     <div class="container">
       <div class="footer-top" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:60px;">
         
@@ -444,22 +441,16 @@
             <li><a href="#contact" class="footer-link" style="transition: opacity 0.3s ease;">CONTACT</a></li>
           </ul>
           
-          <ul class="footer-list" style="padding: 0;">
-             <li><p class="footer-list-title" style="color: var(--white); font-family: var(--ff-oswald); letter-spacing: 2px; margin-bottom: 20px; font-size: 1.6rem; text-transform: uppercase;">Credit</p></li>
-             
-             <li style="display: flex; align-items: center; gap: 15px; margin-bottom: 30px;">
-               <img src="./assets/images/theomedia-logo.jpg" alt="TheoMedia" style="width: 50px; height: 50px; border-radius: 50%;">
-               <div>
-                 <span style="display:block; color:var(--white); opacity:0.7; font-size: 1.2rem; margin-bottom: 2px;">WEBSITE BY</span>
-                 <a href="https://www.theomedia.co.uk/" target="_blank" rel="noopener noreferrer" style="font-weight:700; color:var(--white); text-decoration:none; white-space: nowrap; font-size: 1.4rem; transition: opacity 0.3s ease;" onmouseover="this.style.opacity=0.7" onmouseout="this.style.opacity=1">THEOMEDIA.CO.UK &nearr;</a>
-               </div>
-             </li>
-             
-             <li>
-               <span style="display:block; color:var(--white); opacity:0.7; font-size: 1.2rem; margin-bottom: 5px;">NEED A WEBSITE?</span>
-               <a href="https://www.theomedia.co.uk/contact" target="_blank" rel="noopener noreferrer" style="font-weight:700; color:var(--white); text-decoration:none; white-space: nowrap; font-size: 1.4rem; transition: opacity 0.3s ease;" onmouseover="this.style.opacity=0.7" onmouseout="this.style.opacity=1">CONTACT THEOMEDIA &nearr;</a>
-             </li>
-          </ul>
+          <div class="tm-footer-colophon">
+            <span class="tm-colophon-title">DIGITAL EXPERIENCE BY</span>
+            <a href="https://theomedia.co.uk" target="_blank" rel="noopener noreferrer" class="tm-colophon-brand">TheoMedia &nearr;</a>
+            <span class="tm-colophon-url">theomedia.co.uk</span>
+            <span class="tm-colophon-loc">UK &middot; IRELAND &middot; EUROPE</span>
+            <div class="tm-colophon-links">
+              <a href="https://theomedia.co.uk" target="_blank" rel="noopener noreferrer" class="tm-colophon-link">Explore Studio &nearr;</a>
+              <a href="https://wa.me/353852258004" target="_blank" rel="noopener noreferrer" class="tm-colophon-link">WhatsApp &nearr;</a>
+            </div>
+          </div>
           
         </div>
       </div>
@@ -478,35 +469,18 @@
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 
-  <!-- NEW THEOMEDIA STUDIO BRANDING -->
-  <div class="tm-studio-trigger" onclick="toggleTmMenu()" aria-label="About the website creator">
-    <img src="./assets/images/theomedia-logo.jpg" alt="TheoMedia" class="tm-trigger-logo">
-    <span class="tm-trigger-text">Site by TheoMedia</span>
-  </div>
-
-  <div class="tm-studio-overlay" id="tmMenuOverlay" onclick="toggleTmMenu()"></div>
   
-  <div class="tm-studio-sheet" id="tmMenuSheet">
-    <div class="tm-sheet-header">
-      <img src="./assets/images/theomedia-logo.jpg" alt="TheoMedia" class="tm-sheet-logo">
-      <div class="tm-sheet-title-box">
-        <h4 class="tm-sheet-title">TheoMedia Studio</h4>
-        <p class="tm-sheet-subtitle">Premium Digital Experiences</p>
-      </div>
-      <button class="tm-sheet-close" onclick="toggleTmMenu()"><ion-icon name="close-outline"></ion-icon></button>
-    </div>
-    <div class="tm-sheet-actions">
-      <a href="https://www.theomedia.co.uk" target="_blank" class="tm-action-btn">
-        <ion-icon name="globe-outline"></ion-icon>
-        <span>Visit Studio Website</span>
+
+
+  <!-- PREMIUM STUDIO DOCK -->
+  <div class="tm-studio-dock">
+    <span class="tm-dock-brand">THEOMEDIA</span>
+    <div class="tm-dock-actions">
+      <a href="https://theomedia.co.uk" target="_blank" rel="noopener noreferrer" class="tm-dock-btn">
+        <span class="tm-dock-desktop">Explore the Studio</span><span class="tm-dock-mobile">Studio</span> <span class="tm-dock-arrow">&nearr;</span>
       </a>
-      <a href="https://wa.me/353852258004" target="_blank" class="tm-action-btn">
-        <ion-icon name="logo-whatsapp"></ion-icon>
-        <span>WhatsApp Message</span>
-      </a>
-      <a href="tel:+353852258004" class="tm-action-btn">
-        <ion-icon name="call-outline"></ion-icon>
-        <span>+353 85 225 8004</span>
+      <a href="https://wa.me/353852258004" target="_blank" rel="noopener noreferrer" class="tm-dock-btn">
+        WhatsApp <span class="tm-dock-arrow">&nearr;</span>
       </a>
     </div>
   </div>
